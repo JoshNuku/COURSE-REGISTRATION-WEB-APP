@@ -1,0 +1,8 @@
+runtime: nodejs18
+# handlers:
+#   - url: /.*
+#     script: auto
+# env_variables:
+# TELEGRAM_BOT_TOKEN: "6887856184:AAFKdStAjli3liT6LSL2rO-QZZtzYJPBt2Y"
+# YOUTUBE_API_KEY: "AIzaSyA1q6O9KIrtlBsdK7l8AR5OkalMdB_phKA"
+# PORT: 8080

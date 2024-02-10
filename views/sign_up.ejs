@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign up</title>
+    <%- include('./partials/bootstrap.ejs') %>
+  </head>
+  <body>
+    <%- include('./partials/navbar.ejs') %>
+    <div class="container my-5 d-flex flex-column min-vh-100">
+      <div class="flex-grow-1">
+        <div
+          class="row justify-content-center p-3 shadow-lg mx-3 mb-5 bg-body-tertiary rounded"
+        >
+          <h1 class="text-center my-3">Sign Up Here</h1>
+          <div class="col-md-8">
+            <form class="row g-3" method="post">
+              <div class="col-md-4">
+                <label for="validationDefault01" class="form-label"
+                  >First name</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="validationDefault01"
+                  name="firstName"
+                  required
+                />
+              </div>
+              <div class="col-md-4">
+                <label for="validationDefault01" class="form-label"
+                  >Last name</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="validationDefault01"
+                  name="lastName"
+                  required
+                />
+              </div>
+
+              <div class="col-md-4">
+                <label for="validationDefaultUsername" class="form-label"
+                  >Email</label
+                >
+                <div class="input-group">
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="validationDefaultUsername"
+                    aria-describedby="inputGroupPrepend2"
+                    name="email"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="col-md-4">
+                <label for="validationDefault03" class="form-label"
+                  >Level</label
+                >
+                <select
+                  class="form-select"
+                  id="validationDefault04"
+                  required
+                  name="level"
+                >
+                  <option selected disabled value="">Choose...</option>
+                  <option>100</option>
+                  <option>200</option>
+                  <option>300</option>
+                  <option>400</option>
+                </select>
+              </div>
+              <div class="col-md-4">
+                <label for="validationDefault04" class="form-label"
+                  >Department</label
+                >
+                <select
+                  class="form-select"
+                  id="validationDefault04"
+                  name="department"
+                  required
+                >
+                  <option selected disabled value="">Choose...</option>
+                  <option>COMPUTER ENGINEERING</option>
+                  <option>MATERIALS SCIENCE AND ENGINEERING</option>
+                  <option>BIOMEDICAL ENGINEERING</option>
+                  <option>FOOD PROCESS ENGINEERING</option>
+                  <option>AGRICULTURAL ENGINEERING</option>
+                </select>
+              </div>
+              <div class="col-md-4">
+                <label for="validationDefault05" class="form-label"
+                  >Student ID</label
+                >
+                <input
+                  type="number"
+                  class="form-control"
+                  id="validationDefault05"
+                  name="student_id"
+                  required
+                  maxlength="8"
+                  minlength="8"
+                />
+                <% if (typeof info !== 'undefined') { %>
+
+                <div class="form-text text-danger"><%= info %></div>
+                <% } %>
+              </div>
+              <div class="col-md-4">
+                <label for="validationDefault05" class="form-label"
+                  >Password</label
+                >
+                <input
+                  type="password"
+                  class="form-control"
+                  id="validationDefault05"
+                  name="password"
+                  minlength="6"
+                  required
+                />
+              </div>
+              <div class="col-12">
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="invalidCheck2"
+                    required
+                  />
+                  <label class="form-check-label" for="invalidCheck2">
+                    Agree to terms and conditions
+                  </label>
+                </div>
+              </div>
+              <div class="col-12">
+                <button class="btn btn-primary mb-3" type="submit" id="sign_up">
+                  Sign up
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="conatiner">
+        <footer
+          class="d-flex flex-wrap align-items-center py-3 my-4 border-top"
+        >
+          <p class="col-md-4 mb-0 text-muted">© 2024 SES</p>
+
+          <a
+            href="/"
+            class="col-md-4 d-flex align-items-center justify-content-center link-dark text-decoration-none"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="30"
+              height="30"
+              fill="currentColor"
+              class="bi bi-gear mx-5"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492M5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0"
+              />
+              <path
+                d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115z"
+              />
+            </svg>
+          </a>
+
+          <ul class="nav col-md-4 justify-content-end">
+            <li class="nav-item">
+              <a href="/" class="nav-link px-2 text-muted">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="/students/login" class="nav-link px-2 text-muted"
+                >Log In</a
+              >
+            </li>
+          </ul>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>

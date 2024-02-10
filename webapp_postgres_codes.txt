@@ -1,0 +1,45 @@
+--create database postgres;
+create table students(
+student_id int primary key,
+	firstname text,
+	lastname text,
+	email text,
+	level int,
+	department text,
+	password varchar(200)
+)
+create table courses(
+course_code text primary key,
+	course_name text ,
+	credit_hrs int,
+	lecturer text
+)
+create table regisregistration (
+reg_id int references students(student_id),
+	course_code text references courses(course_code),
+	reg_date date
+)
+
+INSERT INTO courses(course_code, course_name, credit_hrs, lecturer)
+VALUES 
+('SENG 201', 'Linear Algebra', 4, 'John Kutor'),
+('SENG 207', 'Programming for Engineers', 3, 'Kenneth Broni'),
+('SENG 205', 'Fundamentals of Thermodynamics', 3, 'Edward Danquah'),
+('SENG 203', 'Strength of Materials I', 3, 'Jonathan Adjei'),
+('CPEN 211', 'Database Systems Design', 3, 'Dr. John Assiamah'),
+('CPEN 201', 'C++ Programming', 3, 'Margaret Addo'),
+('CPEN 203', 'Digital Circuits', 3, 'Prosper Afriyie'),
+('CPEN 213', 'Discrete Mathematics', 3, 'Dr. Percy'),
+('CPEN 311', 'Object-Oriented Programming', 3, 'Philip Danso'),
+('CPEN 305', 'Computer Networks', 3, 'Janet Mensah'),
+('CPEN 307', 'Operating Systems', 3, 'Daniel Boateng'),
+('CPEN 301', 'Signal and Systems', 3, 'Geoffrey Mills'),
+('CPEN 315', 'Computer Organization and Architecture', 3, 'Isaac Boateng'),
+('CPEN 313', 'Microelectronics Circuit Analysis and Design', 4, 'Francis Awumey'),
+('MTEN 201', 'Fundamentals of Materials', 4, 'Kwame Mintah'),
+('MTEN 203', 'Materials in Our World', 4, 'Anita Coffie'),
+('BMEN 205', 'Anatomy and Physiology', 3, 'Gabriel Jesus'),
+('BMEN 203', 'Introduction to Structure and Properties of Materials', 3, 'Elsie Kauffman'),
+('FPEN 205', 'Basic Food Process Engineering Calculations I', 3, 'Kate Drai'),
+('FPEN 203', 'Rheological and Sensory Properties of Foods', 4, 'Harrison Tetteh'),
+('AREN 213', 'Engineering Surveying', 4, 'Michael Amevenku');
